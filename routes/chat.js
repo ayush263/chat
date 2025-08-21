@@ -1,6 +1,6 @@
 // routes/chat.js
 const express = require('express');
-const { OpenAI } = require('openai');
+const  OpenAI  = require('openai');
 const mem = require('../utils/mem');
 const requireAuth = require('../utils/auth');
 
