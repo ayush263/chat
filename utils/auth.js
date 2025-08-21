@@ -1,17 +1,16 @@
 // utils/auth.js
-// Very small "Bearer <token>" check.
+// Simple "Bearer <token>" auth
 
 module.exports = function requireAuth(req, res, next) {
   const header = req.headers.authorization || '';
-  const expected = process.env.SECRET_TOKEN;
+  const expected = process.env.AUTH_TOKEN; // ← use AUTH_TOKEN
 
   if (!expected) {
-    // If you forget to set SECRET_TOKEN, fail closed.
+    // Server misconfigured – no token set
     return res.status(500).json({ error: 'server auth misconfigured' });
   }
 
-  // Header must look like: "Bearer my-secret-token"
-  const ok = header.startsWith('Bearer ') && header.slice(7) === expected;
+  const ok = header.startsWith('Bearer ') && header.slice(7).trim() === expected;
   if (!ok) return res.status(401).json({ error: 'unauthorized' });
 
   next();
