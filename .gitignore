@@ -1,0 +1,9 @@
+# secrets
+.env
+
+# deps & caches
+node_modules/
+npm-debug.log*
+
+# (optional) local db
+memory.db
