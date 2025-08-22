@@ -4,8 +4,8 @@
       "loneliness_episodes": [],
       "emotional_states": [],
       "conversation_preferences": {
-        "surface": 28,
-        "personal": 6
+        "surface": 39,
+        "personal": 8
       },
       "support_requests": [
         {
@@ -18,6 +18,10 @@
         },
         {
           "timestamp": 1755841799712,
+          "persona": "victor"
+        },
+        {
+          "timestamp": 1755855567140,
           "persona": "victor"
         }
       ],
@@ -65,6 +69,18 @@
           "topic": "heyy you remember i told you last time how much i ",
           "timestamp": 1755854108530,
           "persona": "marcus"
+        },
+        {
+          "depth": "personal",
+          "topic": "i wanna talk to your other host what that guys nam",
+          "timestamp": 1755854796736,
+          "persona": "marcus"
+        },
+        {
+          "depth": "personal",
+          "topic": "heyy fuck why you calling me babe i am not your fu",
+          "timestamp": 1755855567140,
+          "persona": "victor"
         }
       ],
       "trust_building_events": []
