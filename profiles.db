@@ -1,0 +1,44 @@
+{
+  "4234": {
+    "firstSeen": 1755832734612,
+    "totalChats": 20,
+    "favoriteGames": [],
+    "mood": "excited",
+    "flirtLevel": "conservative",
+    "lastActive": 1755833010670,
+    "preferredPersona": null,
+    "traits": []
+  },
+  "test123": {
+    "name": "",
+    "firstSeen": 1755835781992,
+    "totalChats": 24,
+    "lastActive": 1755838932677,
+    "favoriteGames": [
+      "blackjack",
+      "slots",
+      "poker"
+    ],
+    "playingStyle": "casual",
+    "riskTolerance": "medium",
+    "flirtLevel": "unknown",
+    "communicationStyle": "normal",
+    "emotionalPatterns": [],
+    "traits": [],
+    "interests": [
+      "sports"
+    ],
+    "behaviorPatterns": {},
+    "preferredPersona": null,
+    "personalAnecdotes": [],
+    "sharedMoments": [],
+    "predictedNeeds": [],
+    "engagement_score": 32,
+    "loyalty_score": 64,
+    "currentStreak": 0,
+    "sessionCount": 20,
+    "averageSessionLength": 0,
+    "lastLearningUpdate": 1755836586350,
+    "confidenceLevel": 12
+  }
+}

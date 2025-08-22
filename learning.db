@@ -1,0 +1,70 @@
+{
+  "game_popularity": {},
+  "player_patterns": {
+    "test123": {
+      "favorite_time": 6,
+      "common_requests": [
+        "hot_games"
+      ],
+      "interaction_style": "normal"
+    }
+  },
+  "conversation_insights": {
+    "is_greeting": {
+      "frequency": 2,
+      "successful_personas": {
+        "sofia": 2
+      },
+      "common_outcomes": []
+    },
+    "wants_game_recommendation": {
+      "frequency": 1,
+      "successful_personas": {
+        "sofia": 1
+      },
+      "common_outcomes": []
+    },
+    "wants_game_recommendation_is_greeting": {
+      "frequency": 1,
+      "successful_personas": {
+        "sofia": 1
+      },
+      "common_outcomes": []
+    },
+    "wants_hot_games_wants_game_recommendation_is_greeting": {
+      "frequency": 1,
+      "successful_personas": {
+        "sofia": 1
+      },
+      "common_outcomes": []
+    },
+    "is_excited_is_celebrating_shares_win_loss": {
+      "frequency": 2,
+      "successful_personas": {
+        "sofia": 2
+      },
+      "common_outcomes": []
+    },
+    "is_excited_is_celebrating_shares_win_loss_is_greeting": {
+      "frequency": 1,
+      "successful_personas": {
+        "sofia": 1
+      },
+      "common_outcomes": []
+    },
+    "asks_question": {
+      "frequency": 1,
+      "successful_personas": {
+        "victor": 1
+      },
+      "common_outcomes": []
+    },
+    "general": {
+      "frequency": 4,
+      "successful_personas": {
+        "sofia": 4
+      },
+      "common_outcomes": []
+    }
+  }
+}

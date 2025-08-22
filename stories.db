@@ -1,0 +1,28 @@
+{
+  "sofia": {
+    "backgroundStories": [],
+    "playerInteractions": {
+      "test123": {
+        "firstMeeting": 1755835781993,
+        "relationshipLevel": "new",
+        "sharedMemories": [],
+        "personalityMatch": "unknown"
+      }
+    },
+    "memorableQuotes": [],
+    "personalityEvolution": []
+  },
+  "victor": {
+    "backgroundStories": [],
+    "playerInteractions": {
+      "test123": {
+        "firstMeeting": 1755835938979,
+        "relationshipLevel": "new",
+        "sharedMemories": [],
+        "personalityMatch": "unknown"
+      }
+    },
+    "memorableQuotes": [],
+    "personalityEvolution": []
+  }
+}

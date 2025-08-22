@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎰 Casino AI - VIP Experience</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gold-gradient: linear-gradient(135deg, #f7b32b 0%, #ffc107 100%);
+            --danger-gradient: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent: #ffd700;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+        }
+
+        .app-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Sidebar - Collapsible */
+        .sidebar {
+            width: 280px;
+            background: var(--darker-bg);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sidebar.collapsed {
+            width: 60px;
+            padding: 15px 10px;
+        }
+
+        .sidebar-toggle {
+            position: absolute;
+            top: 15px;
+            right: -12px;
+            background: var(--primary-gradient);
+            border: none;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            z-index: 10;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: var(--primary-gradient);
+        }
+
+        .sidebar.collapsed .logo {
+            padding: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .sidebar.collapsed .logo h1 {
+            font-size: 1.5em;
+        }
+
+        .logo p {
+            font-size: 0.7em;
+            opacity: 0.8;
+        }
+
+        .sidebar.collapsed .logo p {
+            display: none;
+        }
+
+        .persona-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar.collapsed .persona-cards {
+            gap: 5px;
+        }
+
+        .persona-card {
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background: var(--card-bg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sidebar.collapsed .persona-card {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .persona-card.active {
+            border-color: var(--accent);
+            background: var(--primary-gradient);
+            transform: scale(1.02);
+        }
+
+        .persona-card .name {
+            font-weight: 600;
+            font-size: 1em;
+            margin-bottom: 3px;
+        }
+
+        .sidebar.collapsed .persona-card .name {
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+
+        .persona-card .role {
+            font-size: 0.7em;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+
+        .sidebar.collapsed .persona-card .role,
+        .sidebar.collapsed .persona-card .backstory {
+            display: none;
+        }
+
+        .persona-card .backstory {
+            font-size: 0.6em;
+            opacity: 0.6;
+            line-height: 1.3;
+        }
+
+        .player-stats {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: auto;
+        }
+
+        .sidebar.collapsed .player-stats {
+            padding: 8px;
+        }
+
+        .player-stats h4 {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .sidebar.collapsed .player-stats h4 {
+            display: none;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.75em;
+        }
+
+        .sidebar.collapsed .stat-item {
+            flex-direction: column;
+            font-size: 0.6em;
+            margin-bottom: 3px;
+        }
+
+        .sidebar.collapsed .stat-item span:first-child {
+            display: none;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Main Chat Area */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            min-width: 0;
+        }
+
+        .chat-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border);
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            min-height: 70px;
+        }
+
+        .current-persona {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .persona-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+
+        .persona-info h3 {
+            font-size: 1em;
+            margin-bottom: 2px;
+        }
+
+        .persona-mood {
+            font-size: 0.7em;
+            opacity: 0.7;
+            padding: 2px 6px;
+            background: var(--gold-gradient);
+            border-radius: 8px;
+            color: var(--dark-bg);
+            font-weight: 600;
+        }
+
+        .chat-settings {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .setting-input {
+            padding: 6px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 0.8em;
+            width: 120px;
+        }
+
+        .setting-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Messages Area */
+        .messages-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 0;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            animation: messageAppear 0.3s ease;
+            max-width: 100%;
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.9em;
+        }
+
+        .user .message-avatar {
+            background: var(--success-gradient);
+            color: white;
+        }
+
+        .ai .message-avatar {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .message-content {
+            max-width: calc(100% - 60px);
+            min-width: 0;
+        }
+
+        .message-bubble {
+            padding: 12px 16px;
+            border-radius: 16px;
+            word-wrap: break-word;
+            line-height: 1.4;
+            font-size: 0.9em;
+        }
+
+        .user .message-bubble {
+            background: var(--success-gradient);
+            color: white;
+            border-bottom-right-radius: 6px;
+        }
+
+        .ai .message-bubble {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 6px;
+        }
+
+        .message-metadata {
+            font-size: 0.6em;
+            opacity: 0.6;
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .ai .message-metadata {
+            flex-direction: row-reverse;
+        }
+
+        .persona-indicator {
+            background: var(--gold-gradient);
+            color: var(--dark-bg);
+            padding: 2px 5px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.55em;
+        }
+
+        .analysis-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1px 4px;
+            border-radius: 4px;
+            font-size: 0.5em;
+            font-weight: 600;
+            margin: 1px;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            padding: 0 20px;
+            margin-bottom: 15px;
+        }
+
+        .typing-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+        }
+
+        .typing-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8em;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .typing-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        /* Input Area */
+        .input-container {
+            padding: 15px 20px;
+            border-top: 1px solid var(--border);
+            background: var(--card-bg);
+            flex-shrink: 0;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--darker-bg);
+            border-radius: 20px;
+            padding: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .message-input {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-size: 0.9em;
+            outline: none;
+            min-width: 0;
+        }
+
+        .message-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .send-button {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8em;
+            flex-shrink: 0;
+        }
+
+        .send-button:hover {
+            transform: scale(1.05);
+        }
+
+        .send-button:disabled {
+            background: var(--text-secondary);
+            transform: none;
+            cursor: not-allowed;
+        }
+
+        /* Animations */
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            30% {
+                transform: translateY(-6px);
+                opacity: 1;
+            }
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .notification.success {
+            background: var(--success-gradient);
+        }
+
+        .notification.error {
+            background: var(--danger-gradient);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            .app-container {
+                grid-template-columns: 250px 1fr;
+            }
+            
+            .setting-input {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                overflow-y: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .sidebar.collapsed {
+                height: 60px;
+                max-height: 60px;
+                overflow: hidden;
+            }
+            
+            .persona-cards {
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 10px;
+            }
+            
+            .persona-card {
+                min-width: 120px;
+                flex-shrink: 0;
+            }
+            
+            .chat-header {
+                flex-direction: column;
+                gap: 10px;
+                min-height: auto;
+                padding: 12px 15px;
+            }
+            
+            .chat-settings {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .setting-input {
+                width: 90px;
+                font-size: 0.75em;
+            }
+            
+            .messages-container {
+                padding: 15px;
+            }
+            
+            .input-container {
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .message-content {
+                max-width: calc(100% - 50px);
+            }
+            
+            .message-bubble {
+                padding: 10px 12px;
+                font-size: 0.85em;
+            }
+            
+            .persona-cards {
+                gap: 8px;
+            }
+            
+            .persona-card {
+                min-width: 100px;
+                padding: 8px;
+            }
+            
+            .setting-input {
+                width: 80px;
+                padding: 5px 8px;
+            }
+        }
+
+        /* High DPI / Zoom adjustments */
+        @media (min-resolution: 150dpi) {
+            .message-bubble {
+                font-size: 0.85em;
+            }
+            
+            .chat-header {
+                padding: 12px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <button class="sidebar-toggle" id="sidebarToggle">←</button>
+            
+            <div class="logo">
+                <h1>🎰</h1>
+                <p>VIP Experience</p>
+            </div>
+
+            <div class="persona-cards">
+                <div class="persona-card" data-persona="marcus">
+                    <div class="name">Marcus 😎</div>
+                    <div class="role">Smooth Operator</div>
+                    <div class="backstory">Atlantic City native, psychology degree, drives BMW</div>
+                </div>
+
+                <div class="persona-card" data-persona="sofia">
+                    <div class="name">Sofia ✨</div>
+                    <div class="role">Playful Host</div>
+                    <div class="backstory">Ex-showgirl, astrology obsessed, cats Ace & King</div>
+                </div>
+
+                <div class="persona-card" data-persona="victor">
+                    <div class="name">Victor 🎯</div>
+                    <div class="role">Vegas Legend</div>
+                    <div class="backstory">Since 1987, widower, mentors players</div>
+                </div>
+            </div>
+
+            <div class="player-stats">
+                <h4>Your Stats</h4>
+                <div class="stat-item">
+                    <span>Chats:</span>
+                    <span class="stat-value" id="totalChats">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Tier:</span>
+                    <span class="stat-value" id="loyaltyTier">Casual</span>
+                </div>
+                <div class="stat-item">
+                    <span>Persona:</span>
+                    <span class="stat-value" id="favoritePersona">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="current-persona">
+                    <div class="persona-avatar" id="currentAvatar">🎰</div>
+                    <div class="persona-info">
+                        <h3 id="currentPersonaName">Ready to Chat</h3>
+                        <span class="persona-mood" id="currentMood">Waiting...</span>
+                    </div>
+                </div>
+
+                <div class="chat-settings">
+                    <input type="text" id="userName" class="setting-input" placeholder="Name" value="Player">
+                    <input type="text" id="userId" class="setting-input" placeholder="User ID" value="test123">
+                    <input type="password" id="authToken" class="setting-input" placeholder="Token">
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Welcome Message -->
+                <div class="message ai">
+                    <div class="message-avatar">🎰</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <strong>Welcome to Casino AI! 💎</strong><br><br>
+                            Meet your hosts:<br>
+                            <strong>Marcus</strong> - Smooth & confident 😎<br>
+                            <strong>Sofia</strong> - Playful & energetic ✨<br>
+                            <strong>Victor</strong> - Wise veteran 🎯<br><br>
+                            I'll pick the perfect personality for you!
+                        </div>
+                        <div class="message-metadata">
+                            <span>System</span>
+                            <span class="persona-indicator">Welcome</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-avatar">🤔</div>
+                <div class="typing-content">
+                    <span id="typingPersona">AI</span> is thinking...
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" class="message-input" 
+                           placeholder="Message...">
+                    <button id="sendButton" class="send-button">
+                        <span>Send</span>
+                        <span>🎰</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Advanced Casino Chat Controller
+        class AdvancedCasinoChat {
+            constructor() {
+                this.currentPersona = null;
+                this.messageCount = 0;
+                this.playerStats = {};
+                
+                this.initializeElements();
+                this.bindEvents();
+                this.setupResponsive();
+                this.addExamplePrompts();
+            }
+
+            initializeElements() {
+                this.elements = {
+                    messagesContainer: document.getElementById('messagesContainer'),
+                    messageInput: document.getElementById('messageInput'),
+                    sendButton: document.getElementById('sendButton'),
+                    typingIndicator: document.getElementById('typingIndicator'),
+                    currentPersonaName: document.getElementById('currentPersonaName'),
+                    currentMood: document.getElementById('currentMood'),
+                    currentAvatar: document.getElementById('currentAvatar'),
+                    typingPersona: document.getElementById('typingPersona'),
+                    userName: document.getElementById('userName'),
+                    userId: document.getElementById('userId'),
+                    authToken: document.getElementById('authToken'),
+                    totalChats: document.getElementById('totalChats'),
+                    loyaltyTier: document.getElementById('loyaltyTier'),
+                    favoritePersona: document.getElementById('favoritePersona'),
+                    sidebar: document.getElementById('sidebar'),
+                    sidebarToggle: document.getElementById('sidebarToggle')
+                };
+            }
+
+            bindEvents() {
+                // Send message events
+                this.elements.sendButton.addEventListener('click', () => this.sendMessage());
+                this.elements.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+
+                // Sidebar toggle
+                this.elements.sidebarToggle.addEventListener('click', () => this.toggleSidebar());
+
+                // Persona selection
+                document.querySelectorAll('.persona-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('active'));
+                        card.classList.add('active');
+                        const persona = card.dataset.persona;
+                        this.showPersonaInfo(persona);
+                    });
+                });
+
+                // Focus input
+                this.elements.messageInput.focus();
+            }
+
+            setupResponsive() {
+                // Auto-collapse sidebar on small screens
+                const checkScreenSize = () => {
+                    if (window.innerWidth <= 768) {
+                        this.elements.sidebar.classList.add('collapsed');
+                        this.elements.sidebarToggle.textContent = '→';
+                    }
+                };
+                
+                window.addEventListener('resize', checkScreenSize);
+                checkScreenSize();
+            }
+
+            toggleSidebar() {
+                this.elements.sidebar.classList.toggle('collapsed');
+                this.elements.sidebarToggle.textContent = 
+                    this.elements.sidebar.classList.contains('collapsed') ? '→' : '←';
+            }
+
+            showPersonaInfo(persona) {
+                const personas = {
+                    marcus: { name: 'Marcus', avatar: '😎', mood: 'Smooth & Confident' },
+                    sofia: { name: 'Sofia', avatar: '✨', mood: 'Playful & Energetic' },
+                    victor: { name: 'Victor', avatar: '🎯', mood: 'Wise & Protective' }
+                };
+
+                const info = personas[persona];
+                if (info) {
+                    this.elements.currentPersonaName.textContent = info.name;
+                    this.elements.currentAvatar.textContent = info.avatar;
+                    this.elements.currentMood.textContent = info.mood;
+                }
+            }
+
+            async sendMessage() {
+                const message = this.elements.messageInput.value.trim();
+                const token = this.elements.authToken.value.trim();
+                const name = this.elements.userName.value.trim();
+                const uid = this.elements.userId.value.trim();
+
+                if (!message) return;
+                if (!token) {
+                    this.showNotification('Please enter your auth token!', 'error');
+                    return;
+                }
+
+                // Add user message
+                this.addMessage(message, true, name);
+                this.elements.messageInput.value = '';
+                this.elements.sendButton.disabled = true;
+                this.showTyping();
+
+                try {
+                    const response = await fetch('http://localhost:3000/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            user_id: uid,
+                            first_name: name
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    this.hideTyping();
+
+                    // Extract AI response
+                    let aiResponse = '';
+                    if (data.reply) {
+                        aiResponse = data.reply;
+                    } else if (data.content && data.content.messages) {
+                        aiResponse = data.content.messages[0].text;
+                    }
+
+                    if (aiResponse) {
+                        // Update persona if provided
+                        if (data.debug && data.debug.persona) {
+                            this.currentPersona = data.debug.persona;
+                            this.showPersonaInfo(data.debug.persona);
+                            
+                            // Update active persona card
+                            document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('active'));
+                            const activeCard = document.querySelector(`[data-persona="${data.debug.persona}"]`);
+                            if (activeCard) activeCard.classList.add('active');
+                        }
+
+                        this.addMessage(aiResponse, false, this.currentPersona, data.debug);
+                        this.messageCount++;
+                        this.updateStats(data.debug);
+                        
+                    } else {
+                        throw new Error('Empty response from AI');
+                    }
+
+                } catch (error) {
+                    this.hideTyping();
+                    console.error('Chat error:', error);
+                    this.showNotification(`Error: ${error.message}`, 'error');
+                } finally {
+                    this.elements.sendButton.disabled = false;
+                    this.elements.messageInput.focus();
+                }
+            }
+
+            addMessage(content, isUser = false, persona = null, debug = null) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user' : 'ai'}`;
+
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = 'message-avatar';
+                
+                if (isUser) {
+                    avatarDiv.textContent = this.elements.userName.value.charAt(0).toUpperCase() || 'U';
+                } else {
+                    const avatars = { marcus: '😎', sofia: '✨', victor: '🎯' };
+                    avatarDiv.textContent = avatars[persona] || '🎰';
+                }
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.className = 'message-bubble';
+                bubbleDiv.innerHTML = content;
+
+                const metadataDiv = document.createElement('div');
+                metadataDiv.className = 'message-metadata';
+
+                if (isUser) {
+                    metadataDiv.innerHTML = `
+                        <span>${new Date().toLocaleTimeString()}</span>
+                        <span class="persona-indicator">You</span>
+                    `;
+                } else {
+                    let badges = '';
+                    if (debug && debug.analysis) {
+                        if (debug.analysis.excitement > 6) {
+                            badges += '<span class="analysis-badge">🔥 Excited</span> ';
+                        }
+                        if (debug.analysis.frustration > 6) {
+                            badges += '<span class="analysis-badge">😤 Frustrated</span> ';
+                        }
+                        if (debug.analysis.response_length === 'long') {
+                            badges += '<span class="analysis-badge">📚 Detailed</span> ';
+                        }
+                    }
+                    
+                    metadataDiv.innerHTML = `
+                        <span>${new Date().toLocaleTimeString()}</span>
+                        <div>
+                            ${badges}
+                            <span class="persona-indicator">${persona ? persona.charAt(0).toUpperCase() + persona.slice(1) : 'AI'}</span>
+                        </div>
+                    `;
+                }
+
+                contentDiv.appendChild(bubbleDiv);
+                contentDiv.appendChild(metadataDiv);
+                messageDiv.appendChild(avatarDiv);
+                messageDiv.appendChild(contentDiv);
+
+                this.elements.messagesContainer.appendChild(messageDiv);
+                this.elements.messagesContainer.scrollTop = this.elements.messagesContainer.scrollHeight;
+            }
+
+            showTyping() {
+                this.elements.typingIndicator.style.display = 'flex';
+                this.elements.typingPersona.textContent = this.currentPersona 
+                    ? this.currentPersona.charAt(0).toUpperCase() + this.currentPersona.slice(1)
+                    : 'AI';
+                this.elements.messagesContainer.scrollTop = this.elements.messagesContainer.scrollHeight;
+            }
+
+            hideTyping() {
+                this.elements.typingIndicator.style.display = 'none';
+            }
+
+            showNotification(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+
+            updateStats(debug) {
+                this.elements.totalChats.textContent = this.messageCount;
+                
+                if (debug && debug.analysis) {
+                    const engagement = debug.analysis.excitement > 6 ? 'High' : 
+                                    debug.analysis.frustration > 6 ? 'Support' : 'Normal';
+                }
+
+                if (this.currentPersona) {
+                    this.elements.favoritePersona.textContent = 
+                        this.currentPersona.charAt(0).toUpperCase() + this.currentPersona.slice(1);
+                }
+
+                const loyaltyTier = this.messageCount > 20 ? 'VIP' : 
+                                  this.messageCount > 10 ? 'Regular' : 'Casual';
+                this.elements.loyaltyTier.textContent = loyaltyTier;
+            }
+
+            addExamplePrompts() {
+                setTimeout(() => {
+                    const exampleMessage = document.createElement('div');
+                    exampleMessage.className = 'message ai';
+                    exampleMessage.innerHTML = `
+                        <div class="message-avatar">💡</div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <strong>Try these prompts:</strong><br><br>
+                                🎰 "What slots are hot today?"<br>
+                                😤 "I keep losing, this sucks"<br>
+                                🤔 "Poker strategy tips?"<br>
+                                😘 "You're cute!"<br>
+                                📚 "Tell me Vegas stories"
+                            </div>
+                            <div class="message-metadata">
+                                <span>Examples</span>
+                                <span class="persona-indicator">Tips</span>
+                            </div>
+                        </div>
+                    `;
+                    this.elements.messagesContainer.appendChild(exampleMessage);
+                    this.elements.messagesContainer.scrollTop = this.elements.messagesContainer.scrollHeight;
+                }, 2000);
+            }
+        }
+
+        // Initialize the chat when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AdvancedCasinoChat();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "behavior_patterns": {
+    "test123": {
+      "loneliness_episodes": [],
+      "emotional_states": [],
+      "conversation_preferences": {
+        "surface": 28,
+        "personal": 6
+      },
+      "support_requests": [
+        {
+          "timestamp": 1755841238141,
+          "persona": "victor"
+        },
+        {
+          "timestamp": 1755841763257,
+          "persona": "victor"
+        },
+        {
+          "timestamp": 1755841799712,
+          "persona": "victor"
+        }
+      ],
+      "gaming_motivation_analysis": {}
+    }
+  },
+  "emotional_tracking": {},
+  "relationship_depth": {
+    "test123": {
+      "overall_depth": "new",
+      "persona_relationships": {},
+      "conversation_milestones": [
+        {
+          "depth": "personal",
+          "topic": "just fucked up wbu",
+          "timestamp": 1755841238141,
+          "persona": "victor"
+        },
+        {
+          "depth": "personal",
+          "topic": "its sad man just got kicked out of the job nothing",
+          "timestamp": 1755841799712,
+          "persona": "victor"
+        },
+        {
+          "depth": "personal",
+          "topic": "btw wbu",
+          "timestamp": 1755841821626,
+          "persona": "victor"
+        },
+        {
+          "depth": "personal",
+          "topic": "whats the name of two host i forget can you rememb",
+          "timestamp": 1755841877744,
+          "persona": "victor"
+        },
+        {
+          "depth": "personal",
+          "topic": "i know but just for the asumntion i wanted to know",
+          "timestamp": 1755841962326,
+          "persona": "victor"
+        },
+        {
+          "depth": "personal",
+          "topic": "heyy you remember i told you last time how much i ",
+          "timestamp": 1755854108530,
+          "persona": "marcus"
+        }
+      ],
+      "trust_building_events": []
+    }
+  },
+  "conversation_topics": {}
+}

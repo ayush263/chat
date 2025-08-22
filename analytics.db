@@ -1,0 +1,662 @@
+{
+  "sessions": [
+    {
+      "userId": "test123",
+      "timestamp": 1755835781993,
+      "persona": "sofia",
+      "userMessageLength": 17,
+      "aiMessageLength": 119,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "winning",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 0
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "winning"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755835807680,
+      "persona": "sofia",
+      "userMessageLength": 17,
+      "aiMessageLength": 134,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "winning",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 1
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "winning"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755835856534,
+      "persona": "sofia",
+      "userMessageLength": 59,
+      "aiMessageLength": 259,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 2
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755835919714,
+      "persona": "sofia",
+      "userMessageLength": 13,
+      "aiMessageLength": 130,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "winning",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 3
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "winning"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755835938979,
+      "persona": "victor",
+      "userMessageLength": 12,
+      "aiMessageLength": 210,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": true,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "long",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": true,
+        "risk_tolerance": "medium",
+        "personality_match": "victor",
+        "conversation_depth": 4
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "long",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836327478,
+      "persona": "sofia",
+      "userMessageLength": 4,
+      "aiMessageLength": 118,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 5
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836337273,
+      "persona": "victor",
+      "userMessageLength": 23,
+      "aiMessageLength": 276,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": true,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "long",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": true,
+        "risk_tolerance": "medium",
+        "personality_match": "victor",
+        "conversation_depth": 6
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "long",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836369463,
+      "persona": "sofia",
+      "userMessageLength": 49,
+      "aiMessageLength": 197,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 2,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 7
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836390946,
+      "persona": "sofia",
+      "userMessageLength": 43,
+      "aiMessageLength": 180,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 8
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836410320,
+      "persona": "sofia",
+      "userMessageLength": 17,
+      "aiMessageLength": 197,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 9
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836418111,
+      "persona": "sofia",
+      "userMessageLength": 12,
+      "aiMessageLength": 112,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 10
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836427401,
+      "persona": "sofia",
+      "userMessageLength": 25,
+      "aiMessageLength": 152,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 11
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836442677,
+      "persona": "sofia",
+      "userMessageLength": 27,
+      "aiMessageLength": 165,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 12
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836457674,
+      "persona": "sofia",
+      "userMessageLength": 32,
+      "aiMessageLength": 130,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 13
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836491271,
+      "persona": "sofia",
+      "userMessageLength": 23,
+      "aiMessageLength": 175,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": true,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": "sofia",
+        "conversation_depth": 14
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836501561,
+      "persona": "sofia",
+      "userMessageLength": 24,
+      "aiMessageLength": 225,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 2,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 15
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836518782,
+      "persona": "victor",
+      "userMessageLength": 19,
+      "aiMessageLength": 843,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "pro",
+        "engagement_level": "low",
+        "wants_tips": true,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "long",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": true,
+        "risk_tolerance": "medium",
+        "personality_match": "victor",
+        "conversation_depth": 16
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "long",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836559618,
+      "persona": "sofia",
+      "userMessageLength": 51,
+      "aiMessageLength": 162,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 17
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836575182,
+      "persona": "sofia",
+      "userMessageLength": 34,
+      "aiMessageLength": 253,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "unknown",
+        "engagement_level": "medium",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": null,
+        "conversation_depth": 18
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    },
+    {
+      "userId": "test123",
+      "timestamp": 1755836586351,
+      "persona": "sofia",
+      "userMessageLength": 17,
+      "aiMessageLength": 164,
+      "analysis": {
+        "mood": "neutral",
+        "excitement_level": 0,
+        "frustration_level": 0,
+        "money_situation": "unknown",
+        "experience_level": "newbie",
+        "engagement_level": "low",
+        "wants_tips": false,
+        "wants_support": false,
+        "wants_entertainment": false,
+        "is_flirting": false,
+        "is_showing_off": false,
+        "response_length": "short",
+        "needs_story": false,
+        "needs_motivation": false,
+        "needs_education": false,
+        "risk_tolerance": "medium",
+        "personality_match": "sofia",
+        "conversation_depth": 19
+      },
+      "sessionContext": {
+        "time_of_day": "morning",
+        "response_length": "short",
+        "player_state": "unknown"
+      }
+    }
+  ],
+  "patterns": {
+    "sofia": {
+      "count": 17,
+      "avgLength": 0,
+      "topics": {
+        "games": 1,
+        "flirting": 1
+      }
+    },
+    "victor": {
+      "count": 3,
+      "avgLength": 0,
+      "topics": {
+        "games": 1
+      }
+    }
+  },
+  "insights": {}
+}
